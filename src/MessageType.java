@@ -1,0 +1,3 @@
+public enum MessageType {
+    MWOE_BROADCAST, CONVERGECAST, LEADER_BROADCAST, MERGE
+}
