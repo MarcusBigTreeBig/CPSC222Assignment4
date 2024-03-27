@@ -9,8 +9,8 @@ import java.util.Random;
 public class Main {
     public static void main(String[] args) {
 
-        int numberOfNodes = 5;
-        int maxEdgesPerNode = 3; //must be at least 2
+        int numberOfNodes = 20;
+        int maxEdgesPerNode = 5; //must be at least 2
         ArrayList<Node> nodes = new ArrayList<>();
         Random rand = new Random();
 

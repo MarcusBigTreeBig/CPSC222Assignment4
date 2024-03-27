@@ -30,7 +30,7 @@ public class Node implements Runnable{
      * @param inGraph the graph the node is part of
      */
     public Node(int id, ArrayList<Node> inGraph){
-        messages = new ArrayBlockingQueue<>(20);
+        messages = new ArrayBlockingQueue<>(100000);
         edges = new ArrayList<Edge>();
         this.id = id;
         this.inGraph = inGraph;
@@ -128,7 +128,6 @@ public class Node implements Runnable{
                 smallestSeen = e;
             }
         }
-        System.out.println("ID: " + id + " MWOE: " + smallestSeen);
 
         //request merge with another single node component
         sending = Message.createMergeMessage(this);
@@ -152,7 +151,6 @@ public class Node implements Runnable{
                     if (receiving.getType() == MessageType.LEADER_BROADCAST) {
                         leaderID = receiving.getLeaderID();
                         connectedTo = receiving.getConnectedTo();
-                        //System.out.println(id + ", new leader: " + leaderID);
                         sending = Message.createLeaderBroadCast(this, leaderID, connectedTo);
                         for (Edge e: edges) {
                             if (e.isInUse() && receiving.getSender() != e.getNode()) {//send to all other nodes in component
@@ -214,8 +212,6 @@ public class Node implements Runnable{
                             if (id == leaderID) {//if it's reached the leader, start merging
                                 sending = Message.createMergeMessage(hasSmallest);//sending on behalf of the one with the MWOE
                                 smallestSeen.getNode().receiveMessage(sending);
-                                System.out.println(id + " send merge request to: " + smallestSeen.getNode());
-                                System.out.println(smallestSeen + ", " + hasSmallest);
                             }else {
                                 for (Edge e : edges) {
                                     if (e.getNode() == convergeTo) {//finding the node to converge back to
@@ -229,32 +225,33 @@ public class Node implements Runnable{
                     }
 
                     //merge with another component
-                    if (receiving.getType() == MessageType.MERGE && smallestSeen.getNode() == receiving.getSender()) {//merge if both ends agree
-                        smallestSeen.setInUse(true);
-                        receiving.getSender().smallestSeen.setInUse(true);
-                        if (this.getID() > smallestSeen.getNode().getID()) {
-                            leaderID = this.getID();
-                        } else {
-                            leaderID = smallestSeen.getNode().getID();
-                        }
-                        System.out.println("Added: " + smallestSeen);
+                    if (receiving.getType() == MessageType.MERGE) {//merge if both ends agree
+                        if (smallestSeen.getNode() == receiving.getSender()) {
+                            smallestSeen.setInUse(true);
+                            receiving.getSender().smallestSeen.setInUse(true);
+                            if (this.getID() > smallestSeen.getNode().getID()) {
+                                leaderID = this.getID();
+                            } else {
+                                leaderID = smallestSeen.getNode().getID();
+                            }
+                            System.out.println("Leader: " +leaderID + ", Added Edge: " + smallestSeen);
 
-                        //when the algorithm is complete, start a shutdown broadcast
-                        if (connectedTo.size() == inGraph.size()) {
-                            //start a shutdown broadcast
-                            System.out.println("here");
-                            this.receiveMessage(Message.createShutdown());
+                            //when the algorithm is complete, start a shutdown broadcast
+                            if (connectedTo.size() == inGraph.size()) {
+                                //start a shutdown broadcast
+                                this.receiveMessage(Message.createShutdown());
+                            }
+
+                            if (id == leaderID) {
+                                connectedTo.addAll(receiving.getSender().connectedTo);
+                                System.out.println("Leader: " + id + ", connected to: " + connectedTo);
+                                this.receiveMessage(Message.createLeaderBroadCast(this, leaderID, connectedTo));//start broadcasting leader change
+                                this.receiveMessage(Message.createMWOEBroadCast(this));//start broadcasting mwoe search
+                            }
+                        }else{//put back into queue so message is not lost when this node has to wait for another node
+                            this.receiveMessage(receiving);
                         }
 
-                        if (id == leaderID) {
-                            connectedTo.addAll(receiving.getSender().connectedTo);
-                            System.out.println(id + " conto " + connectedTo);
-                            this.receiveMessage(Message.createLeaderBroadCast(this, leaderID, connectedTo));//start broadcasting leader change
-                            this.receiveMessage(Message.createMWOEBroadCast(this));//start broadcasting mwoe search
-                        }
-
-                    }else{//put back into queue so message is not lost when this node has to wait for another node
-                        this.receiveMessage(receiving);
                     }
 
                 }
