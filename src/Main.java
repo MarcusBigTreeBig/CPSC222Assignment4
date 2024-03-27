@@ -122,3 +122,91 @@ public class Main {
     }
 
 }
+
+/*
+Some sample output
+
+0
+55(1) 96(2) 177(4) 149(6) 142(10)
+1
+55(0) 84(2) 143(6) 104(7) 135(9)
+2
+84(1) 45(3) 96(0) 111(7) 126(8)
+3
+45(2) 156(4) 59(6) 189(9) 15(11)
+4
+156(3) 28(5) 177(0) 109(8) 71(9)
+5
+28(4) 122(6) 163(11) 178(16) 22(18)
+6
+122(5) 139(7) 149(0) 143(1) 59(3)
+7
+139(6) 162(8) 104(1) 111(2) 31(11)
+8
+162(7) 165(9) 126(2) 109(4) 147(10)
+9
+165(8) 161(10) 135(1) 189(3) 71(4)
+10
+161(9) 145(11) 142(0) 147(8) 141(12)
+11
+145(10) 152(12) 15(3) 163(5) 31(7)
+12
+152(11) 166(13) 141(10) 102(14) 159(16)
+13
+166(12) 110(14) 90(15) 25(19)
+14
+110(13) 95(15) 102(12) 73(16) 87(18)
+15
+95(14) 157(16) 90(13) 79(17) 108(18)
+16
+157(15) 148(17) 178(5) 159(12) 73(14)
+17
+148(16) 146(18) 79(15) 2(19)
+18
+146(17) 27(19) 22(5) 87(14) 108(15)
+19
+27(18) 25(13) 2(17)
+
+Leader: 18, Added Edge: 22(5)
+Leader: 18, connected to: [18, 5]
+Leader: 18, Added Edge: 22(18)
+Leader: 5, Added Edge: 28(4)
+Leader: 5, connected to: [18, 5, 4]
+Leader: 9, Added Edge: 71(9)
+Leader: 1, Added Edge: 55(0)
+Leader: 1, connected to: [1, 0]
+Leader: 19, Added Edge: 2(19)
+Leader: 1, Added Edge: 55(1)
+Leader: 19, Added Edge: 2(17)
+Leader: 19, connected to: [19, 17]
+Leader: 19, Added Edge: 25(13)
+Leader: 19, connected to: [19, 17, 13]
+Leader: 19, Added Edge: 27(18)
+Leader: 19, connected to: [19, 17, 13, 18, 5, 4]
+Leader: 19, Added Edge: 27(18)
+Leader: 19, connected to: [19, 17, 13, 18, 5, 4, 18, 5, 4]
+Leader: 17, Added Edge: 79(15)
+Leader: 17, connected to: [19, 17, 13, 18, 5, 4, 18, 5, 4, 15]
+Leader: 8, Added Edge: 109(8)
+Leader: 11, Added Edge: 15(11)
+Leader: 16, Added Edge: 73(14)
+Leader: 16, Added Edge: 73(16)
+Leader: 11, Added Edge: 15(3)
+Leader: 16, connected to: [16, 14]
+Leader: 18, Added Edge: 87(14)
+Leader: 18, connected to: [19, 17, 13, 18, 5, 4, 18, 5, 4, 15, 16, 14]
+Leader: 11, connected to: [11, 3]
+Leader: 14, Added Edge: 102(12)
+Leader: 11, Added Edge: 31(7)
+Leader: 3, Added Edge: 45(2)
+Leader: 14, connected to: [19, 17, 13, 18, 5, 4, 18, 5, 4, 15, 16, 14, 12]
+Leader: 3, connected to: [11, 3, 7, 2]
+Leader: 11, connected to: [11, 3, 7]
+Leader: 11, Added Edge: 31(11)
+Leader: 2, Added Edge: 84(1)
+Leader: 2, connected to: [11, 3, 7, 2, 1, 0]
+Leader: 14, Added Edge: 102(14)
+Leader: 6, Added Edge: 59(6)
+Leader: 12, Added Edge: 141(10)
+Leader: 12, connected to: [19, 17, 13, 18, 5, 4, 18, 5, 4, 15, 16, 14, 12, 10]
+ */
