@@ -1,3 +1,5 @@
+package package_marcus_herbert;
+
 /**
  * Each type of message that could be needed for nodes to send eachother in the SynchGHS algorithm
  */

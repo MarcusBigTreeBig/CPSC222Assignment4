@@ -1,7 +1,9 @@
+package package_marcus_herbert;
+
 import java.util.ArrayList;
 
 /**
- * Message object to be sent between nodes in the Synch GHS algorithm
+ * package_marcus_herbert.Message object to be sent between nodes in the Synch GHS algorithm
  * Has a type of message and when created, contains the necessary information that could
  * be needed by the receiving node
  */

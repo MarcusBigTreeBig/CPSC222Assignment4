@@ -1,3 +1,5 @@
+package package_marcus_herbert;
+
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -167,46 +169,46 @@ Some sample output
 19
 27(18) 25(13) 2(17)
 
-Leader: 18, Added Edge: 22(5)
+Leader: 18, Added package_marcus_herbert.Edge: 22(5)
 Leader: 18, connected to: [18, 5]
-Leader: 18, Added Edge: 22(18)
-Leader: 5, Added Edge: 28(4)
+Leader: 18, Added package_marcus_herbert.Edge: 22(18)
+Leader: 5, Added package_marcus_herbert.Edge: 28(4)
 Leader: 5, connected to: [18, 5, 4]
-Leader: 9, Added Edge: 71(9)
-Leader: 1, Added Edge: 55(0)
+Leader: 9, Added package_marcus_herbert.Edge: 71(9)
+Leader: 1, Added package_marcus_herbert.Edge: 55(0)
 Leader: 1, connected to: [1, 0]
-Leader: 19, Added Edge: 2(19)
-Leader: 1, Added Edge: 55(1)
-Leader: 19, Added Edge: 2(17)
+Leader: 19, Added package_marcus_herbert.Edge: 2(19)
+Leader: 1, Added package_marcus_herbert.Edge: 55(1)
+Leader: 19, Added package_marcus_herbert.Edge: 2(17)
 Leader: 19, connected to: [19, 17]
-Leader: 19, Added Edge: 25(13)
+Leader: 19, Added package_marcus_herbert.Edge: 25(13)
 Leader: 19, connected to: [19, 17, 13]
-Leader: 19, Added Edge: 27(18)
+Leader: 19, Added package_marcus_herbert.Edge: 27(18)
 Leader: 19, connected to: [19, 17, 13, 18, 5, 4]
-Leader: 19, Added Edge: 27(18)
+Leader: 19, Added package_marcus_herbert.Edge: 27(18)
 Leader: 19, connected to: [19, 17, 13, 18, 5, 4, 18, 5, 4]
-Leader: 17, Added Edge: 79(15)
+Leader: 17, Added package_marcus_herbert.Edge: 79(15)
 Leader: 17, connected to: [19, 17, 13, 18, 5, 4, 18, 5, 4, 15]
-Leader: 8, Added Edge: 109(8)
-Leader: 11, Added Edge: 15(11)
-Leader: 16, Added Edge: 73(14)
-Leader: 16, Added Edge: 73(16)
-Leader: 11, Added Edge: 15(3)
+Leader: 8, Added package_marcus_herbert.Edge: 109(8)
+Leader: 11, Added package_marcus_herbert.Edge: 15(11)
+Leader: 16, Added package_marcus_herbert.Edge: 73(14)
+Leader: 16, Added package_marcus_herbert.Edge: 73(16)
+Leader: 11, Added package_marcus_herbert.Edge: 15(3)
 Leader: 16, connected to: [16, 14]
-Leader: 18, Added Edge: 87(14)
+Leader: 18, Added package_marcus_herbert.Edge: 87(14)
 Leader: 18, connected to: [19, 17, 13, 18, 5, 4, 18, 5, 4, 15, 16, 14]
 Leader: 11, connected to: [11, 3]
-Leader: 14, Added Edge: 102(12)
-Leader: 11, Added Edge: 31(7)
-Leader: 3, Added Edge: 45(2)
+Leader: 14, Added package_marcus_herbert.Edge: 102(12)
+Leader: 11, Added package_marcus_herbert.Edge: 31(7)
+Leader: 3, Added package_marcus_herbert.Edge: 45(2)
 Leader: 14, connected to: [19, 17, 13, 18, 5, 4, 18, 5, 4, 15, 16, 14, 12]
 Leader: 3, connected to: [11, 3, 7, 2]
 Leader: 11, connected to: [11, 3, 7]
-Leader: 11, Added Edge: 31(11)
-Leader: 2, Added Edge: 84(1)
+Leader: 11, Added package_marcus_herbert.Edge: 31(11)
+Leader: 2, Added package_marcus_herbert.Edge: 84(1)
 Leader: 2, connected to: [11, 3, 7, 2, 1, 0]
-Leader: 14, Added Edge: 102(14)
-Leader: 6, Added Edge: 59(6)
-Leader: 12, Added Edge: 141(10)
+Leader: 14, Added package_marcus_herbert.Edge: 102(14)
+Leader: 6, Added package_marcus_herbert.Edge: 59(6)
+Leader: 12, Added package_marcus_herbert.Edge: 141(10)
 Leader: 12, connected to: [19, 17, 13, 18, 5, 4, 18, 5, 4, 15, 16, 14, 12, 10]
  */

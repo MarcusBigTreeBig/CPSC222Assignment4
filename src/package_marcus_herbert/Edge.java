@@ -1,5 +1,7 @@
+package package_marcus_herbert;
+
 /**
- * Edge classed used for implementing the Synch GHS MST algorithm
+ * package_marcus_herbert.Edge classed used for implementing the Synch GHS MST algorithm
  * Contains a weight and a node it points to
  * Because it only points to one node, for each edge, each node object representing a node
  * adjacent to the edge will need it's own edge object
@@ -25,7 +27,7 @@ public class Edge {
 
     /**
      *
-     * @return the Node this edge points to
+     * @return the package_marcus_herbert.Node this edge points to
      */
     public Node getNode () {
         return node;
